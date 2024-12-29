@@ -13,8 +13,16 @@ public class UpdateController {
     @Autowired
     private UpdateTaskServiceImpl updateTaskService;
 
-    @PutMapping("/update")
-    public TaskResponse update(@RequestBody UpdateTaskRequest updateTaskRequest) {
-        return updateTaskService.updateTask(updateTaskRequest);
+    @CrossOrigin(origins = "*")
+    @PutMapping  ("/update")
+    public String update(@RequestBody UpdateTaskRequest updateTaskRequest) {
+        try{
+              updateTaskService.updateTask(updateTaskRequest);
+              return "Task updated successfully";
+
+        } catch (Exception e) {
+
+        return e.getMessage();
+        }
     }
 }

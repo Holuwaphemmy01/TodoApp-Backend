@@ -19,7 +19,7 @@ public class CompletedTasksController {
     @Autowired
     private CompletedTasksImpl completedTasksImpl;
 
-    @CrossOrigin(origins = "http://localhost:5173")
+    @CrossOrigin(origins = "*")
     @GetMapping("/completedtasks/{username}")
     public ResponseEntity<?> completedTasks(@PathVariable("username") String username) {
 

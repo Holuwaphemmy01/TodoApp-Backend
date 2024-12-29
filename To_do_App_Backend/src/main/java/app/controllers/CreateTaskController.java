@@ -12,7 +12,7 @@ public class CreateTaskController {
     @Autowired
     private CreateTaskService createTaskService;
 
-    @CrossOrigin(origins = "http://localhost:5173")
+    @CrossOrigin(origins = "*")
     @PostMapping("/create-task")
     public String createTask(@RequestBody CreateTaskRequest createTaskRequest) {
         try {
