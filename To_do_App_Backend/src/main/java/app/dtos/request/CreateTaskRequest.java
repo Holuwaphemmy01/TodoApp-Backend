@@ -10,6 +10,7 @@ public class CreateTaskRequest {
     private String title;
     private String description;
     private Boolean completed;
-    private Date dueDate;
+    private String dueDate;
+    private String startDate;
     private String user_id;
 }

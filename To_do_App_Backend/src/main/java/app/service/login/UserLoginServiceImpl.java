@@ -21,6 +21,6 @@ public class UserLoginServiceImpl implements UserLoginService {
         User user = userRepository.findByUsername(userLoginRequest.getUsername());
         if(user == null) throw new IllegalArgumentException("User not found");
         if(!hashPassword.checkPassword(userLoginRequest.getPassword(), user.getPassword())) throw new IllegalArgumentException("Wrong password");
-        return user.getUsername() + " logged in successfully" ;
+        return user.getUsername();
     }
 }

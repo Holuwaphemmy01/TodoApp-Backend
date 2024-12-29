@@ -3,10 +3,7 @@ package app.controllers;
 import app.dtos.request.CreateTaskRequest;
 import app.service.create_task.CreateTaskService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/to-do-app")
@@ -15,7 +12,7 @@ public class CreateTaskController {
     @Autowired
     private CreateTaskService createTaskService;
 
-
+    @CrossOrigin(origins = "http://localhost:5173")
     @PostMapping("/create-task")
     public String createTask(@RequestBody CreateTaskRequest createTaskRequest) {
         try {
