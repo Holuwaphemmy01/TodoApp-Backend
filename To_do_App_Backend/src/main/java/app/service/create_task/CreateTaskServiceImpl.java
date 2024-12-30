@@ -22,7 +22,7 @@ public class CreateTaskServiceImpl implements CreateTaskService {
         Task task = new Task();
         task.setTitle(createTaskRequest.getTitle());
         task.setDescription(createTaskRequest.getDescription());
-        task.setTaskId(createTaskRequest.getUser_id()+taskRepository.count()+1);
+//        task.setTaskId(createTaskRequest.getUser_id()+taskRepository.count()+1);
         task.setStartDate(createTaskRequest.getStartDate());
         task.setDueDate(createTaskRequest.getDueDate());
         task.setCompleted(false);
