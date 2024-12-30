@@ -24,9 +24,9 @@ public class CompletedTasksImpl implements CompletedTasks {
         }
 
         List<Optional<TaskResponse>> taskResponses = new ArrayList<>();
-        TaskResponse taskResponse = new TaskResponse();
         for (Task task : TaskForEachUser) {
             if(task.isCompleted()) {
+                TaskResponse taskResponse = new TaskResponse();
                 taskResponse.setTitle(task.getTitle());
                 taskResponse.setDescription(task.getDescription());
                 taskResponse.setStartDate(task.getStartDate());
